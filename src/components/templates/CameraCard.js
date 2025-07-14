@@ -31,8 +31,14 @@ function CameraCard({ camera, onFullScreen }) {
 
         </div>
         <div className='bg-slate-900 flex flex-col space-y-3 items-center justify-center rounded-xl w-full h-64 mt-2 mx-auto'>
-          <Image src={camera.liveImage} alt='camera' width={400} height={100} priority className='bg-cover  h-full rounded-md' />
-        </div>
+          {
+            camera.status === "online" ? (
+              <Image src={camera.liveImage} alt='camera' width={400} height={100} priority className='bg-cover  h-full rounded-md' />
+            ) : <p className='text-center flex flex-col items-center justify-center text-red-400/50'>
+              <BsFillCameraVideoFill className='size-7' />
+              {camera.status}
+            </p>
+          }        </div>
       </div>
 
     </>
