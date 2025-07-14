@@ -3,14 +3,14 @@ const cameraList = [
         id: 1,
         name: "camera-1",
         locationRecord: "parking",
-        status: "online",
+        status: "Live",
         liveImage: "/images/parking.jpg"
     },
     {
         id: 2,
         name: "camera-2",
         locationRecord: "office",
-        status: "online",
+        status: "Live",
         liveImage: "/images/office.webp"
     },
     {
@@ -24,7 +24,7 @@ const cameraList = [
         id: 4,
         name: "camera-4",
         locationRecord: "network room",
-        status: "online",
+        status: "Live",
         liveImage: "/images/networkroom.jpg"
     },
     {
@@ -51,7 +51,7 @@ const systemDetails = [
             status: "access"
         },
         network: {
-            status: "online",
+            status: "Live",
             firewall: "active",
             uptime: "99%"
         },

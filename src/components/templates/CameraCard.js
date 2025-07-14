@@ -9,7 +9,6 @@ import { BsFillCameraVideoFill } from "react-icons/bs";
 function CameraCard({ camera, onFullScreen }) {
 
 
-
   return (
     <>
 
@@ -23,7 +22,7 @@ function CameraCard({ camera, onFullScreen }) {
 
           </div>
           <div className='flex items-center gap-x-2'>
-            <p className={`${camera.status === "offline" ? "bg-red-600" : " bg-green-500/70 "} animate-pulse px-1.5 py-0.5 rounded-md`}>
+            <p className={`${camera.status === "offline" ? "bg-red-600" : " bg-green-500/70 "} animate-pulse px-1.5 py-0.5 rounded`}>
               {camera.status}</p>
             <AiOutlineExpand className='size-5'
               onClick={onFullScreen} />
@@ -38,7 +37,8 @@ function CameraCard({ camera, onFullScreen }) {
               <BsFillCameraVideoFill className='size-7' />
               {camera.status}
             </p>
-          }        </div>
+          }
+        </div>
       </div>
 
     </>
