@@ -11,7 +11,7 @@ function AlertDetailPage({ alert }) {
 
     return (
         <div className="  flex items-center justify-center  p-6 h-screen ">
-            <div className='w-1/2 p-5 mx-auto  rounded-xl bg-gradient-to-tr from-[#1e293b] to-[#334155] shadow-2xl border border-[#475569]'>
+            <div className='w-full md:w-1/2 p-5 mx-auto  rounded-xl bg-gradient-to-tr from-[#1e293b] to-[#334155] shadow-2xl border border-[#475569]'>
                 <h2 className="text-2xl font-bold mb-6 text-sky-500 text-center">Alert Detail</h2>
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between">

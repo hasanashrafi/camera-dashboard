@@ -32,7 +32,9 @@ function Layout({ children }) {
               <div className='max-w-7xl mx-auto px-4 py-6 flex items-center justify-between'>
               <div className='flex items-center gap-x-2'>
                     <PiSecurityCameraFill className='size-6 ' />
-                    <p className='text-2xl bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent'>Security Dashboard</p>
+                    <p className='text-sm md:text-2xl bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent'>
+                    Security Dashboard
+                    </p>
 
                 </div>
                 <div className='flex items-center  gap-x-4'>
@@ -40,7 +42,7 @@ function Layout({ children }) {
                         <span className='inline-block rounded-full size-2 bg-lime-400 animate-pulse'></span>
                         <p className='text-lime-400'>System Online</p>
                     </div>
-                    <p className='flex items-center gap-x-2'>
+                    <p className='hidden md:flex items-center gap-x-2'>
                         {currentTime}
                         <IoIosTimer className='size-5' />
                     </p>
