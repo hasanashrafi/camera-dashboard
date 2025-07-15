@@ -13,16 +13,17 @@ function AlertCard({ alert }) {
                 </div>
                 <p
                     className={`${alert.status === "normal"
-                            ? "bg-yellow-500"
-                            : alert.status === "low"
-                                ? "bg-orange-500"
-                                : alert.status === "high"
-                                    ? "bg-red-500"
-                                    : ""
+                        ? "bg-yellow-500"
+                        : alert.status === "low"
+                            ? "bg-orange-500"
+                            : alert.status === "high"
+                                ? "bg-red-500"
+                                : ""
                         } rounded-md py-1 px-3`}
                 >
                     {alert.status}
-                </p>            </div>
+                </p>
+            </div>
 
 
 
