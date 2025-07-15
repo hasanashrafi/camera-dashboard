@@ -66,7 +66,7 @@ const alerts = [
         name: "motion detected",
         camera: "1",
         location: "parking",
-        time: new Date(),
+        time: "7/15/2025, 08:22:48 AM",
         status: "normal"
     },
     {
@@ -74,7 +74,7 @@ const alerts = [
         name: "motion detected",
         camera: "4",
         location: "network room",
-        time: new Date(),
+        time: "7/15/2025, 10:38:50 AM",
         status: "low"
     },
     {
@@ -82,7 +82,7 @@ const alerts = [
         name: "motion detected",
         camera: "2",
         location: " office",
-        time: new Date(),
+        time: "7/15/2025, 12:53:50 AM",
         status: "high"
     },
 ]
