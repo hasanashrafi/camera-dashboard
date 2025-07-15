@@ -7,16 +7,30 @@ import { IoMdNotificationsOff } from "react-icons/io";
 import AlertCard from './templates/AlertCard';
 import { alerts } from '@/data/cameraList';
 import Link from 'next/link';
+import { Bounce, toast, ToastContainer } from 'react-toastify';
 
 
 function SideBar() {
   const [alertsHide, setAlertHide] = useState(false)
   return (
     <div className='flex flex-col gap-y-4 self-start  rounded-xl p-4 w-full md:w-1/2'>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
       {/* actions */}
       <div className='flex flex-col p-3 rounded-md  space-y-3 bg-gradient-to-tr from-[#1e293b] to-[#334155] shadow-xl'>
         <h2 className='text-xl font-medium mb-4 text-sky-500'>Quick Actions</h2>
-        <button className='w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2'>
+        <button onClick={() => toast.success("ضبط ویدئو شروع شد")} className='w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2'>
           <FaPlay className='mr-2' />
           Start Recording
         </button>
@@ -47,7 +61,7 @@ function SideBar() {
             <>
               {alerts.map(alert => (
                 <Link href={`/alerts/${alert.id}`} key={alert.id}>
-                <AlertCard  alert={alert} />
+                  <AlertCard alert={alert} />
                 </Link>
               ))}
 
