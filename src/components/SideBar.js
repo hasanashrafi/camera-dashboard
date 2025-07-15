@@ -8,6 +8,8 @@ import AlertCard from './templates/AlertCard';
 import { alerts } from '@/data/cameraList';
 import Link from 'next/link';
 import { Bounce, toast, ToastContainer } from 'react-toastify';
+import ActionsCard from './templates/ActionsCard';
+import SystemStatusCard from './templates/SystemStatusCard';
 
 
 function SideBar() {
@@ -28,21 +30,7 @@ function SideBar() {
         transition={Bounce}
       />
       {/* actions */}
-      <div className='flex flex-col p-3 rounded-md  space-y-3 bg-gradient-to-tr from-[#1e293b] to-[#334155] shadow-xl'>
-        <h2 className='text-xl font-medium mb-4 text-sky-500'>Quick Actions</h2>
-        <button onClick={() => toast.success("ضبط ویدئو شروع شد")} className='w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2'>
-          <FaPlay className='mr-2' />
-          Start Recording
-        </button>
-        <button className='w-full bg-slate-700 hover:bg-slate-600 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2'>
-          <FaDownload className='mr-2' />
-          Export File
-        </button>
-        <button className='w-full bg-slate-700 hover:bg-slate-600 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2'>
-          <IoSettingsOutline className='mr-2' />
-          Setting
-        </button>
-      </div>
+      <ActionsCard />
 
       {/* alerts */}
       <div className='flex flex-col space-y-2 p-3 rounded-md bg-gradient-to-tr from-[#1e293b] to-[#334155] shadow-xl'>
@@ -50,7 +38,6 @@ function SideBar() {
           <h2 className='flex items-center gap-x-3 text-xl font-medium mb-4 text-sky-500'>Recent Alerts
             <IoMdNotificationsOff className='cursor-pointer size-5 text-gray-500 ' onClick={() => setAlertHide(alertsHide => !alertsHide)} />
           </h2>
-
           <span className='bg-red-300 p-0.25 px-1 text-sm  rounded text-red-800 mb-4'>
             3 new
           </span>
@@ -71,47 +58,7 @@ function SideBar() {
       </div>
 
       {/* system status */}
-      <div className='p-3 rounded-md bg-gradient-to-tr from-[#1e293b] to-[#334155] shadow-xl'>
-        <h2 className='text-xl font-medium mb-4 text-sky-500'>System Status</h2>
-        <div className='flex flex-col gap-y-2'>
-          <div className='flex items-center justify-between'>
-            <p>
-              Networks
-            </p>
-            <span className='text-green-500'>
-              <span className='size-2 bg-green-500 rounded-full inline-block mr-1'></span>
-              Online</span>
-          </div>
-
-          <div className='flex items-center justify-between'>
-            <p>
-              Storage
-            </p>
-            <span className='text-yellow-500'>
-              <span className='size-2 bg-yellow-500 rounded-full inline-block mr-1'></span>
-
-              76%</span>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p>
-              Backup
-            </p>
-            <span className='text-green-500'>
-              <span className='size-2 bg-green-500 rounded-full inline-block mr-1'></span>
-              Active</span>
-          </div>
-
-          <div className='flex items-center justify-between'>
-            <p>
-              Firewall
-            </p>
-            <span className='text-green-500'>
-              <span className='size-2 bg-green-500 rounded-full inline-block mr-1'></span>
-              Protected</span>
-          </div>
-        </div>
-
-      </div>
+      <SystemStatusCard />
     </div>
   )
 }
