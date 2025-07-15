@@ -1,13 +1,10 @@
 'use client'
 import React, { useState } from 'react'
-import { FaPlay } from "react-icons/fa6";
-import { FaDownload } from "react-icons/fa6";
-import { IoSettingsOutline } from "react-icons/io5";
 import { IoMdNotificationsOff } from "react-icons/io";
 import AlertCard from './templates/AlertCard';
 import { alerts } from '@/data/cameraList';
 import Link from 'next/link';
-import { Bounce, toast, ToastContainer } from 'react-toastify';
+import { Bounce,  ToastContainer } from 'react-toastify';
 import ActionsCard from './templates/ActionsCard';
 import SystemStatusCard from './templates/SystemStatusCard';
 
