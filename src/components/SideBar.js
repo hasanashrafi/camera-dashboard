@@ -6,6 +6,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { IoMdNotificationsOff } from "react-icons/io";
 import AlertCard from './templates/AlertCard';
 import { alerts } from '@/data/cameraList';
+import Link from 'next/link';
 
 
 function SideBar() {
@@ -33,7 +34,7 @@ function SideBar() {
       <div className='flex flex-col space-y-2 p-3 rounded-md bg-gradient-to-tr from-[#1e293b] to-[#334155] shadow-xl'>
         <div className='flex items-center justify-between'>
           <h2 className='flex items-center gap-x-3 text-xl font-medium mb-4 text-sky-500'>Recent Alerts
-            <IoMdNotificationsOff className='cursor-pointer size-5 text-red-300 ' onClick={() => setAlertHide(alertsHide => !alertsHide)} />
+            <IoMdNotificationsOff className='cursor-pointer size-5 text-gray-500 ' onClick={() => setAlertHide(alertsHide => !alertsHide)} />
           </h2>
 
           <span className='bg-red-300 p-0.25 px-1 text-sm  rounded text-red-800 mb-4'>
@@ -44,7 +45,11 @@ function SideBar() {
         {
           alertsHide ? null : (
             <>
-              {alerts.map(alert => (<AlertCard key={alert.id} alert={alert} />))}
+              {alerts.map(alert => (
+                <Link href={`/alerts/${alert.id}`} key={alert.id}>
+                <AlertCard  alert={alert} />
+                </Link>
+              ))}
 
             </>
           )
